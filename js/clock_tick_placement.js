@@ -59,10 +59,12 @@ function createEquationLabels(clockElem, clockRadius, labelGap) {
     eqLabel.addEventListener('mouseenter', function () {
       eqLabel.style.color = '#ff0';
       eqLabel.style.fontSize = '1.2em';
+      pivotEq.style.zIndex = '20';
     });
     eqLabel.addEventListener('mouseleave', function () {
       eqLabel.style.color = '';
       eqLabel.style.fontSize = '';
+      pivotEq.style.zIndex = '0';
     });
     eqLabel.addEventListener('click', function (e) {
       e.stopPropagation();

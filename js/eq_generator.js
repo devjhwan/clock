@@ -71,12 +71,17 @@ function equationGenerator(i) {
     "(factorial(-(~2))<<(-(~0)+2))+(~(-6))",                                  //53 (-(~2))!<<(-(~0)+2)+6
     "(factorial(-(~2))<<(-(~0)+2))+6",                                        //54 (-(~2))!<<(-(~0)+2)+6
     "(factorial(-(~2))<<(-(~0)+2))-(~6)",                                     //55 (-(~2))!<<(-(~0)+2))-(~6)
-    "factorial(2**(factorial(0)+2))/factorial(6)",                                       //56 (2<<(0+2))!/6!
+    "factorial(2**(factorial(0)+2))/factorial(6)",                            //56 (2<<(0+2))!/6!
     "2**factorial(factorial(0)+2)+(~6)",                                      //57 2^((0!+2)!)+(~6)
     "2**factorial(factorial(0)+2)-6",                                         //58 2^((0!+2)!)-6
     "2**factorial(factorial(0)+2)-(~(-6))"                                    //59 2^((0!+2)!)-(~(-6))
   ];
   return nums[i];
+}
+
+for (let i = 0; i < 60; i++) {
+  const equation = equationGenerator(i);
+  console.log(`${equation} = ${eval(`Math.trunc(${equation})`)}`)
 }
 
 function mathEquationGenerator(i) {
@@ -149,9 +154,3 @@ function mathEquationGenerator(i) {
   ];
   return nums[i];
 }
-
-const results = [];
-for (let i = 0; i < 60; i++) {
-  results.push(eval(`Math.trunc(${equationGenerator(i)})`));
-}
-console.log(results);
