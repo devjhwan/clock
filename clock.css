@@ -1,0 +1,111 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 700px;
+  margin: 0;
+  background: #222;
+}
+
+.clock {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  border: 12px solid #fff;
+  border-radius: 50%;
+  background: #333;
+  box-shadow: 0 0 40px #000a;
+}
+
+.hand {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform-origin: bottom center;
+  background: #fff;
+  border-radius: 6px;
+}
+
+.hand.hour {
+  width: 6px;
+  height: 150px;
+  background: #fff;
+  z-index: 3;
+}
+
+.hand.minute {
+  width: 4px;
+  height: 225px;
+  background: #0ff;
+  z-index: 2;
+}
+
+.hand.second {
+  width: 3px;
+  height: 240px;
+  background: #f00;
+  z-index: 1;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  background: #333;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  box-shadow: 0 0 10px #000a;
+}
+
+.pivot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
+
+.tick {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 16px;
+  background: #fff;
+  border-radius: 3px;
+  transform: translateX(-50%);
+}
+
+.tickB {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 8px;
+  background: #fff;
+  border-radius: 1.5px;
+  transform: translateX(-50%);
+}
+
+.eq-pivot {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+.eq-label {
+  position: absolute;
+  transform: translate(-100%, -50%);
+  text-align: right;
+  font-size: 8px;
+  color: #fff;
+  font-family: monospace;
+  user-select: none;
+  white-space: nowrap;
+}
