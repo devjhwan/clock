@@ -7,14 +7,34 @@
   <link rel="stylesheet" href="clock.css">
 </head>
 <body>
-  <div class="clock">
-    <div class="hand hour" id="hourHand"></div>
-    <div class="hand minute" id="minuteHand"></div>
-    <div class="hand second" id="secondHand"></div>
-    <div class="center"></div>
+  <div class="container">
+    <div class="clock">
+      <div class="hand hour" id="hourHand"></div>
+      <div class="hand minute" id="minuteHand"></div>
+      <div class="hand second" id="secondHand"></div>
+      <div class="center"></div>
+    </div>
+    <div>
+      <div class="form-window">
+        <h2>Equation Converter</h2>
+        <input type="text" id="equationInput" placeholder="Enter equation...">
+        <div class="form-section">
+          <label>Code:</label>
+          <div id="codeOutput" class="output-box">-</div>
+        </div>
+        <div class="form-section">
+          <label>Result:</label>
+          <div id="resultOutput" class="output-box">-</div>
+        </div>
+        <div id="errorOutput" class="output-box error-message"></div>
+      </div>
+      <div class="form-hint">Tip: Use "pi" instead of "π"</div>
+    </div>
   </div>
   <script src="js/eq_generator.js"></script>
   <script src="js/clock_hand_update.js"></script>
   <script src="js/clock_tick_placement.js"></script>
+  <script src="js/calc_equation.js"></script>
+  <script src="js/form_handler.js"></script>
 </body>
 </html>

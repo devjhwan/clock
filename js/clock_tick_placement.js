@@ -46,9 +46,7 @@ function createEquationLabels(clockElem, clockRadius, labelGap) {
 
     const eqLabel = document.createElement('div');
     eqLabel.className = 'eq-label';
-    eqLabel.textContent = typeof mathEquationGenerator === 'function'
-      ? mathEquationGenerator(i)
-      : i;
+    eqLabel.textContent = equationGenerator(i);
 
     // 호버 효과 및 클릭 복사 기능 추가
     eqLabel.style.pointerEvents = 'auto';
@@ -68,17 +66,11 @@ function createEquationLabels(clockElem, clockRadius, labelGap) {
     });
     eqLabel.addEventListener('click', function (e) {
       e.stopPropagation();
-      // 복사
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(eqLabel.textContent);
-      } else {
-        // fallback
-        const textarea = document.createElement('textarea');
-        textarea.value = eqLabel.textContent;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
+      // Input to form instead of copying
+      const equationInput = document.getElementById('equationInput');
+      if (equationInput) {
+        equationInput.value = eqLabel.textContent;
+        equationInput.dispatchEvent(new Event('input', { bubbles: true }));
       }
       eqLabel.style.background = '#444';
       setTimeout(() => {
